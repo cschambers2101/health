@@ -71,6 +71,29 @@ class BMI:
         self._bmi = value
         self.which_calculation()
 
+    @property
+    def bmi_as_string(self):
+        '''
+        Property that shows the bmi property as a string
+
+        :return: bmi as a string (underweight, healthy, overweight, obese, extremely obese)
+        '''
+        bmi_string=''
+        if self._bmi < 19:
+            bmi_string='Underweight'
+        elif self._bmi >= 19 and self._bmi <= 24:
+            bmi_string='Healthy'
+        elif self._bmi >= 25 and self._bmi <= 29:
+            bmi_string='Overweight'
+        elif self._bmi >= 30 and self._bmi <= 39:
+            bmi_string='Obese'
+        elif self._bmi >= 40:
+            bmi_string='Extremely Obese'
+        else:
+            raise ValueError('Unable to calculate string version of bmi', bmi_string)
+        return bmi_string
+
+
     def which_calculation(self):
         '''
         Calls relevant function to calculate bmi based on value in self._measurement (defaults to 'imperial')
