@@ -4,6 +4,11 @@ __author__ = 'Craig Chambers'
 class BMI:
     '''
     Calculates BMI values for a given weight and height
+
+    Defaults to:
+     height=0
+     weight=0
+     measurement = 'imperial'
     '''
 
     def __init__(self, height=0, weight=0, measurement='imperial'):
@@ -67,6 +72,11 @@ class BMI:
         self.which_calculation()
 
     def which_calculation(self):
+        '''
+        Calls relevant function to calculate bmi based on value in self._measurement (defaults to 'imperial')
+
+        :return: none
+        '''
         if self._measurement == 'imperial':
             self.calc_imperial_bmi(self._height, self._weight)
         elif self._measurement == 'metric':
@@ -82,6 +92,7 @@ class BMI:
             BMI = ( Weight in Pounds / ( Height in inches x Height in inches ) ) x 703
         :param the_height: height in inches
         :param the_weight: weight in pounds
+        :return none
         '''
         self._bmi = the_weight/(the_height*the_height) * 703
 
@@ -93,5 +104,6 @@ class BMI:
             BMI = ( Weight in Kilograms / ( Height in Meters x Height in Meters ) )
         :param the_height: height in meters
         :param the_weight: weight in kilograms
+        :return none
         '''
         self._bmi = the_weight/(the_height*the_height)
