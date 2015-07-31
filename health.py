@@ -13,7 +13,7 @@ def input_as_integer(value):
 def convert_pounds_to_kilograms():
     pass
 
-def convert_inches_to_centimetres();
+def convert_inches_to_centimetres():
     pass
 
 person = p.Person()
