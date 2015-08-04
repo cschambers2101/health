@@ -81,11 +81,11 @@ class BMI:
         bmi_string=''
         if self._bmi < 19:
             bmi_string='Underweight'
-        elif self._bmi >= 19 and self._bmi <= 24:
+        elif self._bmi >= 19 and self._bmi < 25:
             bmi_string='Healthy'
-        elif self._bmi >= 25 and self._bmi <= 29:
+        elif self._bmi >= 25 and self._bmi < 30:
             bmi_string='Overweight'
-        elif self._bmi >= 30 and self._bmi <= 39:
+        elif self._bmi >= 30 and self._bmi < 40:
             bmi_string='Obese'
         elif self._bmi >= 40:
             bmi_string='Extremely Obese'
