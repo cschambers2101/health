@@ -19,17 +19,17 @@ class BMI:
         :param measurement: imperial or metric
         :return: none
         '''
-        self._measurement = measurement
-        self._height = height
-        self._weight = weight
-        self._bmi = 0
+        self.__measrement = measurement
+        self.__height = height
+        self.__weight = weight
+        self.__bmi = 0
 
-        if self._measurement == 'imperial':
-            self.calc_imperial_bmi(self._height,self._weight)
-        elif self._measurement == 'metric':
-            self.calc_metric_bmi(self._height, self._weight)
+        if self.__measrement == 'imperial':
+            self.__calc_imperial_bmi(self.__height,self.__weight)
+        elif self.__measrement == 'metric':
+            self.__calc_metric_bmi(self.__height, self.__weight)
         else:
-            raise ValueError('Measurement was not "imperial" or "metric"', self._measurement)
+            raise ValueError('Measurement was not "imperial" or "metric"', self.__measrement)
 
     @property
     def height(self):
@@ -38,11 +38,11 @@ class BMI:
 
         :return: height
         '''
-        return self._height
+        return self.__height
 
     @height.setter
     def height(self, value):
-        self._height = value
+        self.__height = value
 
     @property
     def weight(self):
@@ -51,12 +51,12 @@ class BMI:
 
         :return: weight
         '''
-        return self._weight
+        return self.__weight
 
     @weight.setter
     def weight(self, value):
-        self._weight = value
-        self.which_calculation()
+        self.__weight = value
+        self.__which_calculation()
 
     @property
     def bmi(self):
@@ -64,12 +64,12 @@ class BMI:
         Calculated bmi value as an integer
         :return: bmi
         '''
-        return int(self._bmi)
+        return int(self.__bmi)
 
     @bmi.setter
     def bmi(self, value):
-        self._bmi = value
-        self.which_calculation()
+        self.__bmi = value
+        self.__which_calculation()
 
     @property
     def bmi_as_string(self):
@@ -79,54 +79,53 @@ class BMI:
         :return: bmi as a string (underweight, healthy, overweight, obese, extremely obese)
         '''
         bmi_string=''
-        if self._bmi < 19:
+        if self.__bmi < 19:
             bmi_string='Underweight'
-        elif self._bmi >= 19 and self._bmi < 25:
+        elif self.__bmi >= 19 and self.__bmi <= 24:
             bmi_string='Healthy'
-        elif self._bmi >= 25 and self._bmi < 30:
+        elif self.__bmi >= 25 and self.__bmi <= 29:
             bmi_string='Overweight'
-        elif self._bmi >= 30 and self._bmi < 40:
+        elif self.__bmi >= 30 and self.__bmi <= 39:
             bmi_string='Obese'
-        elif self._bmi >= 40:
+        elif self.__bmi >= 40:
             bmi_string='Extremely Obese'
         else:
             raise ValueError('Unable to calculate string version of bmi', bmi_string)
         return bmi_string
 
-
-    def which_calculation(self):
+    def __which_calculation(self):
         '''
-        Calls relevant function to calculate bmi based on value in self._measurement (defaults to 'imperial')
+        Calls relevant function to calculate bmi based on value in self.__measrement (defaults to 'imperial')
 
         :return: none
         '''
-        if self._measurement == 'imperial':
-            self.calc_imperial_bmi(self._height, self._weight)
-        elif self._measurement == 'metric':
-            self.calc_metric_bmi(self._height, self._weight)
+        if self.__measrement == 'imperial':
+            self.__calc_imperial_bmi(self.__height, self.__weight)
+        elif self.__measrement == 'metric':
+            self.__calc_metric_bmi(self.__height, self.__weight)
         else:
-            raise ValueError('Measurement was not "imperial" or "metric"', self._measurement)
+            raise ValueError('Measurement was not "imperial" or "metric"', self.__measrement)
 
-    def calc_imperial_bmi(self, the_height, the_weight):
+    def __calc_imperial_bmi(self, the__height, the__weight):
         '''
         Calculates BMI in Imperial measurements
 
         English BMI Formula
             BMI = ( Weight in Pounds / ( Height in inches x Height in inches ) ) x 703
-        :param the_height: height in inches
-        :param the_weight: weight in pounds
+        :param the__height: height in inches
+        :param the__weight: weight in pounds
         :return none
         '''
-        self._bmi = the_weight/(the_height*the_height) * 703
+        self.__bmi = the__weight/(the__height*the__height) * 703
 
-    def calc_metric_bmi(self, the_height, the_weight):
+    def __calc_metric_bmi(self, the__height, the__weight):
         '''
         Calculates BMI in metric measurements
 
         Metric BMI Formula
             BMI = ( Weight in Kilograms / ( Height in Meters x Height in Meters ) )
-        :param the_height: height in meters
-        :param the_weight: weight in kilograms
+        :param the__height: height in meters
+        :param the__weight: weight in kilograms
         :return none
         '''
-        self._bmi = the_weight/(the_height*the_height)
+        self.__bmi = the__weight/(the__height*the__height)
