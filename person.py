@@ -2,19 +2,19 @@ __author__ = 'Craig Chambers'
 
 
 class Person:
-    '''
+    """
     Defines a person
 
     Collates all the information on a person including their sex, height, weight and age
-    '''
+    """
     def __init__(self):
-        '''
+        """
         :param self.__sex: sex of the person
         :param self.__height: height of the person
         :param self.__weight: weight of the person
         :param self.__age: age of the person
         :return: none
-        '''
+        """
         self.__sex = ''
         self.__height = 0
         self.__weight = 0
