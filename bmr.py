@@ -3,7 +3,7 @@ __author__ = 'Craig Chambers'
 
 class BMR:
     """
-    Calculates Basal Metabolic rate (BMR)
+    Calculates Basal Metabolic rate (BMR).
 
     For men: BMR = 10 x weight (kg) + 6.25 x height (cm) – 5 x age (years) + 5
     For women: BMR = 10 x weight (kg) + 6.25 x height (cm) – 5 x age (years) – 161
@@ -11,7 +11,8 @@ class BMR:
     """
     def __init__(self, sex, weight, height, age):
         """
-        Initialises person with all variables
+        Initialises person with all variables.
+        
         :param sex: Sex of person (male or female)
         :param weight:  Weight of person
         :param height: Height of person
@@ -30,12 +31,16 @@ class BMR:
         return self.__bmr
 
     @bmr.setter
+    """
+    Sets bmr value
+
+    """
     def bmr(self, value):
         self.__bmr = value
 
     def __calc_bmr(self, sex, weight, height, age):
         """
-        Calculates BMR for given sex, weight, height and age
+        Calculates BMR for given sex, weight, height and age.
 
         :param sex: sex of person (male or female)
         :param weight: weight of person in kilograms

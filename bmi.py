@@ -3,7 +3,7 @@ __author__ = 'Craig Chambers'
 
 class BMI:
     """
-    Calculates BMI values for a given weight and height
+    Calculates BMI values for a given weight and height.
 
     Defaults to:
      height=0
@@ -13,7 +13,8 @@ class BMI:
 
     def __init__(self, height=0, weight=0, measurement='imperial'):
         """
-        Initiates the class with height, weight and the measurement used
+        Initiates the class with height, weight and the measurement used.
+        
         :param height: height of the person in inches or meters
         :param weight: weight of the person in pounds or kilograms
         :param measurement: imperial or metric
@@ -34,7 +35,7 @@ class BMI:
     @property
     def height(self):
         """
-        Height property (used to calculate bmi)
+        Height property (used to calculate bmi).
 
         :return: height
         """
@@ -47,7 +48,7 @@ class BMI:
     @property
     def weight(self):
         """
-        Height property (used to calculate bmi)
+        Height property (used to calculate bmi).
 
         :return: weight
         """
@@ -61,7 +62,8 @@ class BMI:
     @property
     def bmi(self):
         """
-        Calculated bmi value as an integer
+        Calculated bmi value as an integer.
+        
         :return: bmi
         """
         return int(self.__bmi)
@@ -74,7 +76,7 @@ class BMI:
     @property
     def bmi_as_string(self):
         """
-        Property that shows the bmi property as a string
+        Property that shows the bmi property as a string.
 
         :return: bmi as a string (underweight, healthy, overweight, obese, extremely obese)
         """
@@ -95,7 +97,7 @@ class BMI:
 
     def __which_calculation(self):
         """
-        Calls relevant function to calculate bmi based on value in self.__measrement (defaults to 'imperial')
+        Calls relevant function to calculate bmi based on value in self.__measrement (defaults to 'imperial').
 
         :return: none
         """
@@ -108,7 +110,7 @@ class BMI:
 
     def __calc_imperial_bmi(self, the__height, the__weight):
         """
-        Calculates BMI in Imperial measurements
+        Calculates BMI in Imperial measurements.
 
         English BMI Formula
             BMI = ( Weight in Pounds / ( Height in inches x Height in inches ) ) x 703
@@ -120,7 +122,7 @@ class BMI:
 
     def __calc_metric_bmi(self, the__height, the__weight):
         """
-        Calculates BMI in metric measurements
+        Calculates BMI in metric measurements.
 
         Metric BMI Formula
             BMI = ( Weight in Kilograms / ( Height in Meters x Height in Meters ) )
