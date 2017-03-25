@@ -14,20 +14,20 @@ class BMI:
     def __init__(self, height=0, weight=0, measurement='imperial'):
         """
         Initiates the class with height, weight and the measurement used.
-        
+
         :param height: height of the person in inches or meters
         :param weight: weight of the person in pounds or kilograms
         :param measurement: imperial or metric
         :return: none
         """
-        self.__measrement = measurement
+        self.__measurement = measurement
         self.__height = height
         self.__weight = weight
         self.__bmi = 0
 
-        if self.__measrement == 'imperial':
+        if self.__measurement == 'imperial':
             self.__calc_imperial_bmi(self.__height,self.__weight)
-        elif self.__measrement == 'metric':
+        elif self.__measurement == 'metric':
             self.__calc_metric_bmi(self.__height, self.__weight)
         else:
             raise ValueError('Measurement was not "imperial" or "metric"', self.__measrement)
@@ -63,7 +63,7 @@ class BMI:
     def bmi(self):
         """
         Calculated bmi value as an integer.
-        
+
         :return: bmi
         """
         return int(self.__bmi)
@@ -101,9 +101,9 @@ class BMI:
 
         :return: none
         """
-        if self.__measrement == 'imperial':
+        if self.__measurement == 'imperial':
             self.__calc_imperial_bmi(self.__height, self.__weight)
-        elif self.__measrement == 'metric':
+        elif self.__measurement == 'metric':
             self.__calc_metric_bmi(self.__height, self.__weight)
         else:
             raise ValueError('Measurement was not "imperial" or "metric"', self.__measrement)
